@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<title>Learn Vue 3 Step by Step</title>
+</head>
+<body>
+
+	<div id="app">
+		{{ mensagem }}
+	</div>
+
+	<script>
+		Vue.createApp({
+			data(){
+				return {
+					mensagem: 'Olá Mundo!'
+				};
+			}
+		}).mount('#app');
+	</script>
+</body>
+</html>
