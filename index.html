@@ -9,7 +9,12 @@
 <body>
 
 	<div id="app">
-		{{ mensagem }}
+		<p>
+			<input type="text" v-model="mensagem">
+		</p>
+		<p>
+			{{ mensagem }} ({{ mensagem.length }})				
+		</p>
 	</div>
 
 	<script>
@@ -18,6 +23,11 @@
 				return {
 					mensagem: 'Olá Mundo!'
 				};
+			},
+			mounted() {
+				setTimeout(() => {
+					this.mensagem = 'Olá você!'
+				}, 3000 );
 			}
 		}).mount('#app');
 	</script>
