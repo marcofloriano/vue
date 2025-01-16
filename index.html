@@ -5,29 +5,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	<title>Learn Vue 3 Step by Step</title>
+	<style>
+		.vermelho {
+			color: red;
+		}
+		.azul {
+			color: blue;
+		}
+	</style>
 </head>
 <body>
-
 	<div id="app">
-		<p>
-			<input type="text" v-model="mensagem">
-		</p>
-		<p>
-			{{ mensagem }} ({{ mensagem.length }})				
-		</p>
+		<button :class="ativado ? 'azul' : 'vermelho' " v-on:click="toggle">Click Me</button>
 	</div>
 
 	<script>
 		Vue.createApp({
-			data(){
+			data() {
 				return {
-					mensagem: 'Olá Mundo!'
+					ativado: false
 				};
 			},
-			mounted() {
-				setTimeout(() => {
-					this.mensagem = 'Olá você!'
-				}, 3000 );
+
+			methods: {
+				toggle() {
+					this.ativado = ! this.ativado;
+				}
 			}
 		}).mount('#app');
 	</script>
